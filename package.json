@@ -2,6 +2,7 @@
     "name": "base-react-api-integration",
     "description": "Base React App integrated to API (with authorization and authentication support)",
     "version": "0.0.1",
+    "license": "MIT",
     "author": "Konrad Szelepusta <konrad.szelepusta@gmail.com>",
     "dependencies": {
         "@emotion/react": "^11.9.0",
