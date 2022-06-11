@@ -15,6 +15,7 @@ jest.mock('../pages/Dashboard', () => ({
 
 it('should render default login page for unauthenticated', () => {
   render(
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AuthState.Provider value={{
       authenticated: false,
       hasRole: () => false,
@@ -29,6 +30,7 @@ it('should render default login page for unauthenticated', () => {
 
 it('should render default dashboard page for authenticated', () => {
   render(
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AuthState.Provider value={{
       authenticated: true,
       hasRole: () => true,

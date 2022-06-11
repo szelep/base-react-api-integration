@@ -1,10 +1,8 @@
 import {
   render,
   screen,
-  waitFor,
 } from '@testing-library/react';
 import React from 'react';
-import userEvent from '@testing-library/user-event';
 import { ApplicationBar } from './ApplicationBar';
 import { AuthState } from '../../providers/AuthProvider';
 
@@ -14,6 +12,7 @@ jest.mock('./ApplicationBarTools', () => ({
 
 it('should render expected elements', () => {
   render(
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AuthState.Provider value={{ authenticated: true }}>
       <ApplicationBar />
     </AuthState.Provider>
@@ -26,6 +25,7 @@ it('should render expected elements', () => {
 
 it('should render empty string on unauthenticated user', () => {
   render(
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AuthState.Provider value={{ authenticated: false }}>
       <div data-testid="empty">
         <ApplicationBar />

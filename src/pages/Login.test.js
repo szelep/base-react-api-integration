@@ -36,9 +36,9 @@ it('should render error message after onLogin failure response', async () => {
   render(
     // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AuthState.Provider value={{ onLogin: async (
-      username,
-      password,
-      success,
+      _username,
+      _password,
+      _success,
       failure
     ) => { failure(); } }}
     >
@@ -54,10 +54,11 @@ it('should render error message after onLogin failure response', async () => {
 
 it('should error be null on onLogin success', async () => {
   render(
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AuthState.Provider value={{
       onLogin: async (
-        username,
-        password,
+        _username,
+        _password,
         success,
       ) => {
         success();

@@ -31,6 +31,7 @@ jest.mock('react-router-dom', () => ({
 
 it('should return navigate without back_to for authenticated', () => {
   render(
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AuthState.Provider value={{ authenticated: true }}>
       <BrowserRouter>
         <GoBackNavigate to="/some-route" />
@@ -44,6 +45,7 @@ it('should return navigate without back_to for authenticated', () => {
 
 it('should append back_to to url for unauthenticated', () => {
   render(
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AuthState.Provider value={{ authenticated: false }}>
       <MemoryRouter
         initialEntries={[
@@ -61,6 +63,7 @@ it('should append back_to to url for unauthenticated', () => {
 
 it('should back_to search part be converted to pathname for authenticated', () => {
   render(
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AuthState.Provider value={{ authenticated: true }}>
       <MemoryRouter
         initialEntries={[
@@ -78,6 +81,7 @@ it('should back_to search part be converted to pathname for authenticated', () =
 
 it('should navigate to orignal "to" path if back_to contains restricted word', () => {
   render(
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AuthState.Provider value={{ authenticated: true }}>
       <MemoryRouter
         initialEntries={[

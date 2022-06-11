@@ -9,6 +9,7 @@ import { AuthState } from '../../providers/AuthProvider';
 
 it('should render expected icons and username', () => {
   render(
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AuthState.Provider value={{
       username: 'some-username',
     }}
@@ -25,6 +26,7 @@ it('should logout button triggers onLogout of auth provider', async () => {
   const onLogoutMock = jest.fn();
 
   render(
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <AuthState.Provider value={{
       onLogout: onLogoutMock,
     }}
@@ -34,6 +36,7 @@ it('should logout button triggers onLogout of auth provider', async () => {
   );
 
   userEvent.click(screen.getByTestId('LogoutIcon'));
+
   await waitFor(() => {
     expect(onLogoutMock).toBeCalledTimes(1);
   });
