@@ -4,7 +4,6 @@ import {
   Route,
   Routes,
 } from 'react-router-dom';
-import { Container } from '@mui/material';
 import { Dashboard } from '../pages/Dashboard';
 import { Login } from '../pages/Login';
 import { useAuth } from '../providers/AuthProvider';
