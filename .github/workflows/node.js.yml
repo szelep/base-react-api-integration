@@ -1,24 +1,19 @@
-name: Node.js CI
+name: CI
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [ main ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
-    steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-      - name: Run build
-        run: yarn build
+    eslint:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [ 16.x ]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: bahmutov/npm-install@v1
+            - name: Run eslint
+              run: node node_modules/eslint/bin/eslint.js "src/" --config ".eslintrc.json" --quiet --ext .js --ext .jsx
