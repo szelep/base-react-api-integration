@@ -1,8 +1,15 @@
-import { render, screen } from '@testing-library/react';
+import {
+  render,
+  screen,
+} from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+jest.mock('./routes/RouterSwitch', () => ({
+  RouterSwitch: () => 'routerswitch component',
+}));
+
+test('renders router switch', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  expect(screen.getByText(/routerswitch component/i)).toBeInTheDocument();
 });

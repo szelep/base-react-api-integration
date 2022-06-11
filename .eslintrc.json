@@ -1,0 +1,79 @@
+{
+    "plugins": [
+        "react-hooks",
+        "eslint-plugin-testing-library",
+        "jest-dom",
+        "import-newlines"
+    ],
+    "extends": [
+        "airbnb",
+        "airbnb/hooks",
+        "react-app",
+        "plugin:testing-library/react",
+        "plugin:jest-dom/recommended"
+    ],
+    "rules": {
+        "object-property-newline": [
+            "error",
+            {
+                "allowAllPropertiesOnSameLine": false
+            }
+        ],
+        "object-curly-newline": [
+            "error",
+            {
+                "consistent": true,
+                "minProperties": 2
+            }
+        ],
+        "react/jsx-props-no-spreading": "off",
+        "import/prefer-default-export": "off",
+        "react/jsx-filename-extension": "off",
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "off",
+        "comma-dangle": [
+            "error",
+            {
+                "arrays": "always-multiline",
+                "objects": "always-multiline",
+                "imports": "always-multiline",
+                "exports": "always-multiline",
+                "functions": "only-multiline"
+            }
+        ],
+        "max-len": [
+            "error",
+            {
+                "code": 120,
+                "tabWidth": 2
+            }
+        ],
+        "import-newlines/enforce": [
+            "error",
+            {
+                "items": 1,
+                "max-len": 120,
+                "semi": false
+            }
+        ],
+        "react/jsx-no-duplicate-props": [
+            "error",
+            {
+                "ignoreCase": false
+            }
+        ],
+        "no-unused-vars": [
+            "warn",
+            {
+                "args": "all",
+                "argsIgnorePattern": "^_"
+            }
+        ],
+        "no-useless-computed-key": "warn",
+        "array-callback-return": "warn",
+        "no-unused-expressions": "warn",
+        "no-console": "warn",
+        "no-alert": "warn"
+    }
+}
