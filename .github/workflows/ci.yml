@@ -1,0 +1,38 @@
+name: CI
+
+on:
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [ main ]
+
+jobs:
+    eslint:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [ 16.x ]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: bahmutov/npm-install@v1
+            - name: Run eslint
+              run: node node_modules/eslint/bin/eslint.js "src/" --config ".eslintrc.json" --quiet --ext .js --ext .jsx
+    build:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [ 16.x ]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: bahmutov/npm-install@v1
+            - run: yarn build
+    tests:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [ 16.x ]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: bahmutov/npm-install@v1
+            - run: yarn test
+    
