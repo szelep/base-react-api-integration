@@ -1,6 +1,6 @@
 # Base react app integrated with API
 
-![example workflow](https://github.com/szelep/base-react-api-integration/actions/workflows/node.js.yml/badge.svg)
+![workflow status](https://github.com/szelep/base-react-api-integration/actions/workflows/ci.yml/badge.svg)
 
 App with features such as:
  - login/logout - authentication&authorization system
