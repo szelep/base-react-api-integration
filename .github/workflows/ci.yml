@@ -34,5 +34,6 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: bahmutov/npm-install@v1
-            - run: yarn test
+            - run: yarn test --ci --coverage
+            - uses: codecov/codecov-action@v2
     
